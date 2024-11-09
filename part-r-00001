@@ -1,0 +1,35 @@
+clixsense	Channel: clixsense
+  Mean Trust Score: 0.8447
+  Median Trust Score: 0.8500
+  Standard Deviation: 0.0601
+  Sample Size: 166616
+  Min Score: 0.7000
+  Max Score: 1.0000
+elite	Channel: elite
+  Mean Trust Score: 0.8677
+  Median Trust Score: 0.8571
+  Standard Deviation: 0.0682
+  Sample Size: 74065
+  Min Score: 0.7000
+  Max Score: 1.0000
+neodev	Channel: neodev
+  Mean Trust Score: 0.8399
+  Median Trust Score: 0.8378
+  Standard Deviation: 0.0669
+  Sample Size: 237161
+  Min Score: 0.7000
+  Max Score: 1.0000
+sharecashgpt	Channel: sharecashgpt
+  Mean Trust Score: 0.9189
+  Median Trust Score: 0.9189
+  Standard Deviation: 0.0000
+  Sample Size: 2261
+  Min Score: 0.9189
+  Max Score: 0.9189
+tasks4dollars	Channel: tasks4dollars
+  Mean Trust Score: 0.8107
+  Median Trust Score: 0.8125
+  Standard Deviation: 0.0044
+  Sample Size: 680
+  Min Score: 0.8000
+  Max Score: 0.8125

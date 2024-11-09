@@ -1,0 +1,56 @@
+bitcoinget	Channel: bitcoinget
+  Mean Trust Score: 0.9577
+  Median Trust Score: 0.9615
+  Standard Deviation: 0.0045
+  Sample Size: 2361
+  Min Score: 0.9524
+  Max Score: 0.9615
+globalactioncash	Channel: globalactioncash
+  Mean Trust Score: 0.8000
+  Median Trust Score: 0.8000
+  Standard Deviation: 0.0000
+  Sample Size: 100
+  Min Score: 0.8000
+  Max Score: 0.8000
+inboxpounds	Channel: inboxpounds
+  Mean Trust Score: 0.9375
+  Median Trust Score: 0.9375
+  Standard Deviation: 0.0000
+  Sample Size: 580
+  Min Score: 0.9375
+  Max Score: 0.9375
+memolink	Channel: memolink
+  Mean Trust Score: 0.9655
+  Median Trust Score: 0.9655
+  Standard Deviation: 0.0000
+  Sample Size: 1620
+  Min Score: 0.9655
+  Max Score: 0.9655
+prizeplank	Channel: prizeplank
+  Mean Trust Score: 1.0000
+  Median Trust Score: 1.0000
+  Standard Deviation: 0.0000
+  Sample Size: 500
+  Min Score: 1.0000
+  Max Score: 1.0000
+prizerebel	Channel: prizerebel
+  Mean Trust Score: 0.9459
+  Median Trust Score: 0.9459
+  Standard Deviation: 0.0000
+  Sample Size: 2263
+  Min Score: 0.9459
+  Max Score: 0.9459
+surveymad	Channel: surveymad
+  Mean Trust Score: 0.8474
+  Median Trust Score: 0.8182
+  Standard Deviation: 0.0392
+  Sample Size: 280
+  Min Score: 0.8182
+  Max Score: 0.9000
+vivatic	Channel: vivatic
+  Mean Trust Score: 0.8378
+  Median Trust Score: 0.8378
+  Standard Deviation: 0.0000
+  Sample Size: 2263
+  Min Score: 0.8378
+  Max Score: 0.8378

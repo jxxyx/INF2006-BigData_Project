@@ -1,0 +1,91 @@
+coinworker	Channel: coinworker
+  Mean Trust Score: 0.8391
+  Median Trust Score: 0.8571
+  Standard Deviation: 0.0407
+  Sample Size: 1421
+  Min Score: 0.7692
+  Max Score: 0.9000
+cotter	Channel: cotter
+  Mean Trust Score: 0.9189
+  Median Trust Score: 0.9189
+  Standard Deviation: 0.0000
+  Sample Size: 2262
+  Min Score: 0.9189
+  Max Score: 0.9189
+diamondtask	Channel: diamondtask
+  Mean Trust Score: 0.7000
+  Median Trust Score: 0.7000
+  Standard Deviation: 0.0000
+  Sample Size: 100
+  Min Score: 0.7000
+  Max Score: 0.7000
+eup_slw	Channel: eup_slw
+  Mean Trust Score: 0.7000
+  Median Trust Score: 0.7000
+  Standard Deviation: 0.0000
+  Sample Size: 200
+  Min Score: 0.7000
+  Max Score: 0.7000
+getpaid	Channel: getpaid
+  Mean Trust Score: 0.9235
+  Median Trust Score: 0.8750
+  Standard Deviation: 0.0873
+  Sample Size: 1341
+  Min Score: 0.7000
+  Max Score: 1.0000
+gifthunterclub	Channel: gifthunterclub
+  Mean Trust Score: 0.8556
+  Median Trust Score: 0.8750
+  Standard Deviation: 0.0618
+  Sample Size: 11630
+  Min Score: 0.7000
+  Max Score: 0.9286
+instagc	Channel: instagc
+  Mean Trust Score: 0.9087
+  Median Trust Score: 0.9259
+  Standard Deviation: 0.0707
+  Sample Size: 8336
+  Min Score: 0.7500
+  Max Score: 1.0000
+keeprewarding	Channel: keeprewarding
+  Mean Trust Score: 0.8667
+  Median Trust Score: 0.8667
+  Standard Deviation: 0.0000
+  Sample Size: 1700
+  Min Score: 0.8667
+  Max Score: 0.8667
+prodege	Channel: prodege
+  Mean Trust Score: 0.8891
+  Median Trust Score: 0.8649
+  Standard Deviation: 0.0395
+  Sample Size: 13898
+  Min Score: 0.8333
+  Max Score: 0.9459
+rewards1	Channel: rewards1
+  Mean Trust Score: 0.8750
+  Median Trust Score: 0.8750
+  Standard Deviation: 0.0000
+  Sample Size: 1221
+  Min Score: 0.8750
+  Max Score: 0.8750
+task_ph	Channel: task_ph
+  Mean Trust Score: 0.8649
+  Median Trust Score: 0.8649
+  Standard Deviation: 0.0000
+  Sample Size: 2261
+  Min Score: 0.8649
+  Max Score: 0.8649
+tremorgames	Channel: tremorgames
+  Mean Trust Score: 0.8288
+  Median Trust Score: 0.8108
+  Standard Deviation: 0.0681
+  Sample Size: 18767
+  Min Score: 0.7000
+  Max Score: 0.9667
+zoombucks	Channel: zoombucks
+  Mean Trust Score: 0.9283
+  Median Trust Score: 0.9189
+  Standard Deviation: 0.0287
+  Sample Size: 3943
+  Min Score: 0.9130
+  Max Score: 1.0000
