@@ -16,4 +16,4 @@ class Task1(models.Model):
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.task1
+        return self.airline
