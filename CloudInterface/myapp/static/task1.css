@@ -1,0 +1,24 @@
+/* Center the chart and style the container */
+.chart-container {
+    width: 90%; /* Increase the width of the chart container */
+    max-width: 800px; /* Increase the maximum width */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px; /* Add some padding */
+    background-color: #f8f9fa; /* Light gray background (Bootstrap style) */
+    border: 1px solid #dee2e6; /* Light border for separation */
+    border-radius: 8px; /* Slight rounding of the edges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Explicitly set the size of the canvas */
+canvas {
+    width: 100% !important; /* Make the canvas take full width of the container */
+    height: 500px !important; /* Increase the height */
+}
+
+/* Style the h1 heading */
+h1 {
+    margin-bottom: 30px;
+    font-size: 2.5rem; /* Slightly larger heading font size */
+    color: #343a40; /* Dark Bootstrap text color */
+}
