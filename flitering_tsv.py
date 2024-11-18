@@ -19,7 +19,7 @@ def load_stopwords():
 # Define sentiment analysis function using SentiWordNet
 
 
-def get_sentiment_sentiwordnet(text, stop_words, threshold=0.3):
+def get_sentiment_sentiwordnet(text, stop_words, threshold=0):
     if text is None:
         return 'neutral'
 
@@ -98,8 +98,8 @@ def main():
     download_nltk_resources()
     stop_words = load_stopwords()
 
-    input_file = 'dataset/Airline-Full-Non-Ag-DFE-Sentiment.tsv'  # TSV file
-    processed_file = 'dataset/Airline_Sentiment_Processed.tsv'    # Save as TSV file
+    input_file = 'cleaned_combined_output.tsv'  # TSV file
+    processed_file = 'Combined_Processed.tsv'    # Save as TSV file
 
     # Step 1: Preprocess and save data
     preprocess_and_save_data(input_file, processed_file, stop_words)
