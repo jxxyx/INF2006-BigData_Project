@@ -56,7 +56,7 @@ class Task5_low(models.Model):
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.Text
+        return self.text
     
 class Task5_high(models.Model):
     text = models.CharField(max_length=2000)
@@ -66,4 +66,4 @@ class Task5_high(models.Model):
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.Text
+        return self.text

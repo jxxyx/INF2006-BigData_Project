@@ -7,5 +7,6 @@ urlpatterns = [
     path('task2/', views.task2_view, name='task2'),
     path('task3/', views.task3_view, name='task3'),
     path('task4/', views.task4_view, name='task4'),
-    path('task5/', views.task5, name='task5'),
+    path('task5_low/', views.task5_low, name='task5_low'),
+    path('task5_high/', views.task5_high, name='task5_high'),
 ]

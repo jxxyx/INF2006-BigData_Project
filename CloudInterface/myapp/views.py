@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.template.loader import get_template
-from .models import Task1, Task2, Task3, Task4
+from .models import Task1, Task2, Task3, Task4, Task5_low, Task5_high
 import json
 from collections import defaultdict
 
@@ -67,5 +67,8 @@ def task4_view(request):
     }
     return render(request, 'task4.html', context)
 
-def task5(request):
-    return render(request, 'task5.html')
+def task5_low(request):
+    return render(request, 'task5_low.html')
+
+def task5_high(request):
+    return render(request, 'task5_high.html')
