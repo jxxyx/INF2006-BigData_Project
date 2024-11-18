@@ -17,3 +17,12 @@ class Task1(models.Model):
 
     def __str__(self):
         return self.airline
+    
+class Task2(models.Model):
+    Airline = models.CharField(max_length=50)
+    Reason = models.CharField(max_length=2000)
+    Count = models.IntegerField(default=False)
+    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.Airline

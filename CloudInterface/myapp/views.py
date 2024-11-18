@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.template.loader import get_template
 from .models import Task1
 import json
+from collections import defaultdict
 
 # Create your views here.
 
@@ -12,7 +13,7 @@ def landing_page(request):
     return render(request, 'landing_page.html')
 
 from django.shortcuts import render
-from .models import Task1
+from .models import Task1, Task2
 
 def task1_view(request):
     data = Task1.objects.all()
@@ -26,8 +27,20 @@ def task1_view(request):
     }
     return render(request, 'task1.html', context)
 
-def task2(request):
-    return render(request, 'task2.html')
+def task2_view(request):
+    task2_data = Task2.objects.all()
+    airline_data = defaultdict(lambda: {"labels": [], "data": []})
+
+    # Group data by airline
+    for entry in task2_data:
+        airline_data[entry.Airline]["labels"].append(entry.Reason)
+        airline_data[entry.Airline]["data"].append(entry.Count)
+
+    # Pass JSON-encoded data for all airlines to the template
+    context = {
+        'airline_data': json.dumps(airline_data),  # JSON-encode the grouped data
+    }
+    return render(request, 'task2.html', context)
 
 def task3(request):
     return render(request, 'task3.html')
