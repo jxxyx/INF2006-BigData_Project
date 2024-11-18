@@ -27,6 +27,14 @@ class Task2(models.Model):
     def __str__(self):
         return self.Airline
     
+class Task3(models.Model):
+    Country = models.CharField(max_length=50)
+    Count = models.IntegerField(default=False)
+    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.Country
+    
 class Task4(models.Model):
     Channel = models.CharField(max_length=50)
     Mean_Trust_Score = models.DecimalField(max_digits=10, decimal_places=4, default=0.00)

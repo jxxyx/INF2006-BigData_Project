@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.template.loader import get_template
-from .models import Task1, Task2, Task4
+from .models import Task1, Task2, Task3, Task4
 import json
 from collections import defaultdict
 
@@ -39,8 +39,16 @@ def task2_view(request):
     }
     return render(request, 'task2.html', context)
 
-def task3(request):
-    return render(request, 'task3.html')
+def task3_view(request):
+    task3_data = Task3.objects.all()
+    labels = [entry.Country for entry in task3_data]
+    data = [entry.Count for entry in task3_data]
+    
+    context = {
+        'labels': json.dumps(labels),
+        'data': json.dumps(data)
+    }
+    return render(request, 'task3.html', context)
 
 def task4_view(request):
     task4_data = Task4.objects.all()
