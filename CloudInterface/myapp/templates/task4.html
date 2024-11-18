@@ -37,36 +37,36 @@
                         {
                             label: 'Min Score',
                             data: data.map(d => d.min),
-                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                            borderColor: 'rgba(255, 99, 132, 1)',
+                            backgroundColor: 'rgb(255, 99, 132)', // Solid red
+                            borderColor: 'rgb(255, 99, 132)',
                             borderWidth: 1
                         },
                         {
                             label: 'Q1',
                             data: data.map(d => d.q1),
-                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                            borderColor: 'rgba(54, 162, 235, 1)',
+                            backgroundColor: 'rgb(54, 162, 235)', // Solid blue
+                            borderColor: 'rgb(54, 162, 235)',
                             borderWidth: 1
                         },
                         {
                             label: 'Median',
                             data: data.map(d => d.median),
-                            backgroundColor: 'rgba(255, 206, 86, 0.2)',
-                            borderColor: 'rgba(255, 206, 86, 1)',
+                            backgroundColor: 'rgb(255, 206, 86)', // Solid yellow
+                            borderColor: 'rgb(255, 206, 86)',
                             borderWidth: 1
                         },
                         {
                             label: 'Q3',
                             data: data.map(d => d.q3),
-                            backgroundColor: 'rgba(75, 192, 192)',
-                            borderColor: 'rgba(75, 192, 192, 1)',
+                            backgroundColor: 'rgb(75, 192, 192)', // Solid teal
+                            borderColor: 'rgb(75, 192, 192)',
                             borderWidth: 1
                         },
                         {
                             label: 'Max Score',
                             data: data.map(d => d.max),
-                            backgroundColor: 'rgba(153, 102, 255, 0.2)',
-                            borderColor: 'rgba(153, 102, 255, 1)',
+                            backgroundColor: 'rgb(153, 102, 255)', // Solid purple
+                            borderColor: 'rgb(153, 102, 255)',
                             borderWidth: 1
                         }
                     ]
@@ -76,10 +76,10 @@
                     maintainAspectRatio: false,
                     scales: {
                         x: {
-                            stacked: true
+                            stacked: true // Stacked bars
                         },
                         y: {
-                            stacked: true,
+                            stacked: true, // Stacked bars
                             beginAtZero: true
                         }
                     }
