@@ -1,8 +1,8 @@
 package Twitterairlinetask3;
-
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
+
 import java.io.IOException;
 
 public class ComplaintMapper extends Mapper<Object, Text, Text, IntWritable> {
@@ -10,17 +10,24 @@ public class ComplaintMapper extends Mapper<Object, Text, Text, IntWritable> {
     private Text country = new Text();
 
     public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
-        // Split the line by tab
-        String[] fields = value.toString().split("\\t");
+        String line = value.toString();
+        String[] fields = line.split("\\t"); // Assuming the dataset is tab-separated
 
-        // Ensure there are enough fields in the record
-        if (fields.length > 15) {
-            String sentiment = fields[14]; // Sentiment column
-            String countryField = fields[10]; // Country column
+        // Column indices (adjust if needed)
+        int countryColumnIndex = 10; // _country
+        int sentimentColumnIndex = 14; // airline_sentiment
+        int negativeColumnIndex = 15;
 
-            if ("negative".equalsIgnoreCase(sentiment) && !countryField.isEmpty()) {
-                country.set(countryField);
+        // Check if the line contains enough columns
+        if (fields.length > Math.max(countryColumnIndex, sentimentColumnIndex)) {
+            String countryName = fields[countryColumnIndex].trim();
+            String sentiment = fields[sentimentColumnIndex].trim().toLowerCase();
+
+            // Emit only if sentiment is negative and country is not empty
+            if (!countryName.isEmpty() && !sentiment.isEmpty() && "negative".equals(sentiment)) {
+                country.set(countryName);
                 context.write(country, one);
+
             }
         }
     }

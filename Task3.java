@@ -20,16 +20,18 @@ public class Task3 {
         job.setJarByClass(Task3.class);
 
         job.setMapperClass(ComplaintMapper.class);
-        job.setCombinerClass(ComplaintReducer.class);
         job.setReducerClass(ComplaintReducer.class);
 
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
-    // Set number of reducers to 1 for a single output file
+
+        // Ensure a single reducer for one output file
         job.setNumReduceTasks(1);
+
         FileInputFormat.addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
 
         System.exit(job.waitForCompletion(true) ? 0 : 1);
     }
 }
+
