@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.template.loader import get_template
-from .models import Task1
+from .models import Task1, Task2, Task4
 import json
 from collections import defaultdict
 
@@ -11,9 +11,6 @@ from collections import defaultdict
 def landing_page(request):
     get_template('landing_page.html')
     return render(request, 'landing_page.html')
-
-from django.shortcuts import render
-from .models import Task1, Task2
 
 def task1_view(request):
     data = Task1.objects.all()
@@ -45,8 +42,22 @@ def task2_view(request):
 def task3(request):
     return render(request, 'task3.html')
 
-def task4(request):
-    return render(request, 'task4.html')
+def task4_view(request):
+    task4_data = Task4.objects.all()
+    labels = [entry.Channel for entry in task4_data]
+    data = [{
+        'min': float(entry.Min_Score),
+        'q1': float(entry.Mean_Trust_Score) - float(entry.Standard_Deviation),
+        'median': float(entry.Median_Trust_Score),
+        'q3': float(entry.Mean_Trust_Score) + float(entry.Standard_Deviation),
+        'max': float(entry.Max_Score)
+    } for entry in task4_data]
+    
+    context = {
+        'labels': json.dumps(labels),
+        'data': json.dumps(data)
+    }
+    return render(request, 'task4.html', context)
 
 def task5(request):
     return render(request, 'task5.html')

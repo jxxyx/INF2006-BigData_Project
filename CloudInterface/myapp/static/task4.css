@@ -1,0 +1,7 @@
+/* task4.css */
+.chart-container {
+    position: relative;
+    height: 60vh; /* Adjust the height as needed */
+    width: 80vw; /* Adjust the width as needed */
+    margin: auto;
+}

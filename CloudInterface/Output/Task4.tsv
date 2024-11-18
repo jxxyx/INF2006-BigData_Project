@@ -1,4 +1,4 @@
-Channel	Mean Trust Score	Median Trust Score	Standard Deviation	Sample Size	Min Score	Max Score
+Channel	Mean_Trust_Score	Median_Trust_Score	Standard_Deviation	Sample_Size	Min_Score	Max_Score
 prodege	0.8891	0.8649	0.0395	13898	0.8333	0.9459
 tasks4dollars	0.8107	0.8125	0.0044	680	0.8	0.8125
 gifthunterclub	0.8556	0.875	0.0618	11630	0.7	0.9286
