@@ -1,0 +1,11 @@
+/* task5_low.css */
+.chart-container {
+    position: relative;
+    height: 60vh; /* Adjust the height as needed */
+    width: 80vw; /* Adjust the width as needed */
+    margin: auto;
+}
+
+.accuracy-container {
+    margin-top: 20px;
+}
