@@ -18,7 +18,7 @@ class Task5_lowAdmin(admin.ModelAdmin):
     list_display = ('id', 'text', 'airline_sentiment_gold', 'predicted_sentiment', 'correct', 'user')  # Columns displayed in the admin list view
 
 class Task5_highAdmin(admin.ModelAdmin):
-    list_display = ('id', 'text', 'airline_sentiment_gold', 'predicted_sentiment', 'correct', 'user')  # Columns displayed in the admin list view
+    list_display = ('id', 'Text', 'Actual_Sentiment', 'Predicted_Sentiment', 'Correct', 'user')  # Columns displayed in the admin list view
 
 # Registering the models
 admin.site.register(UserProfile)

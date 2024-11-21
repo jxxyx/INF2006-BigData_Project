@@ -79,10 +79,10 @@ reset_sequence(Task5_high)
 for _, row in data.iterrows():
     user, created = UserProfile.objects.get_or_create(username='default_user', password='password123')
     Task5_high.objects.create(
-        text=row['text'],
-        airline_sentiment_gold=row['airline_sentiment_gold'],
-        predicted_sentiment=row['predicted_sentiment'],
-        correct=row['correct'],
+        Text=row['Text'],
+        Actual_Sentiment=row['Actual_Sentiment'],
+        Predicted_Sentiment=row['Predicted_Sentiment'],
+        Correct=row['Correct'],
         user=user
     )
 

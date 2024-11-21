@@ -59,11 +59,11 @@ class Task5_low(models.Model):
         return self.text
     
 class Task5_high(models.Model):
-    text = models.CharField(max_length=2000)
-    airline_sentiment_gold = models.CharField(max_length=50)
-    predicted_sentiment = models.CharField(max_length=50)
-    correct = models.IntegerField(default=False)
+    Text = models.CharField(max_length=2000)
+    Actual_Sentiment = models.CharField(max_length=50)
+    Predicted_Sentiment = models.CharField(max_length=50)
+    Correct = models.IntegerField(default=False)
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.text
+        return self.Text
