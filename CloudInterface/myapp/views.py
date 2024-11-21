@@ -81,5 +81,16 @@ def task5_low_view(request):
     }
     return render(request, 'task5_low.html', context)
 
-def task5_high(request):
-    return render(request, 'task5_high.html')
+def task5_high_view(request):
+    task5_high_data = Task5_high.objects.all()
+    incorrect_count = task5_high_data.filter(Correct=0).count()
+    correct_count = task5_high_data.filter(Correct=1).count()
+    total = incorrect_count + correct_count
+    accuracy = (correct_count / total) * 100 if total > 0 else 0
+    
+    context = {
+        'incorrect_count': incorrect_count,
+        'correct_count': correct_count,
+        'accuracy': accuracy,
+    }
+    return render(request, 'task5_high.html', context)
