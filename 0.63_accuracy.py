@@ -12,12 +12,11 @@ nltk.download('sentiwordnet')
 nltk.download('wordnet')
 nltk.download('punkt')
 
-# Initialize Spark session
 spark = SparkSession.builder \
     .appName("SentimentAnalysis") \
     .getOrCreate()
 
-# Load TSV dataset
+
 df = spark.read.csv("cleaned_combined_output.tsv", sep='\t', header=True, inferSchema=True)
 
 # Filter rows with non-null values in 'airline_sentiment_gold' and 'text'
