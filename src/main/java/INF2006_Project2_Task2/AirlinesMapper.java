@@ -10,6 +10,9 @@ import org.apache.hadoop.mapreduce.Mapper;
 import java.io.IOException;
 import java.io.StringReader;
 
+// 2302997
+// Mock Jun Yu
+
 public class AirlinesMapper extends Mapper<Object, Text, Text, IntWritable> {
     private final static IntWritable one = new IntWritable(1);
     private Text airlineReason = new Text();

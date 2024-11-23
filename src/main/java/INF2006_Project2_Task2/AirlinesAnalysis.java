@@ -8,6 +8,9 @@ import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
+// 2302997
+// Mock Jun Yu
+
 /**
  * The main driver class for the MapReduce job to analyze top 5 negative reasons by airline.
  */
@@ -28,6 +31,9 @@ public class AirlinesAnalysis {
         job.setReducerClass(AirlinesReducer.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
+
+        // Set number of reducers to 1 for a single output file
+        job.setNumReduceTasks(1);
 
         FileInputFormat.addInputPath(job, new Path(inputPath));
         FileOutputFormat.setOutputPath(job, new Path(outputPath));

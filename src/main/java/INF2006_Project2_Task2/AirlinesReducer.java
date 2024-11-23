@@ -9,8 +9,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
+// 2302997
+// Mock Jun Yu
+
 public class AirlinesReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
     private Map<String, PriorityQueue<Map.Entry<String, Integer>>> airlineReasonMap = new HashMap<>();
+    private boolean headerWritten = false; // To ensure the header is written only once
 
     @Override
     protected void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
@@ -37,6 +41,12 @@ public class AirlinesReducer extends Reducer<Text, IntWritable, Text, IntWritabl
 
     @Override
     protected void cleanup(Context context) throws IOException, InterruptedException {
+        // Write the header to the output file
+        if (!headerWritten) {
+            context.write(new Text("Airline\tReason\tCount"), null); // Write the header as tab-separated
+            headerWritten = true;
+        }
+
         // Output the top 5 reasons for each airline
         for (Map.Entry<String, PriorityQueue<Map.Entry<String, Integer>>> entry : airlineReasonMap.entrySet()) {
             String airline = entry.getKey();
@@ -45,7 +55,8 @@ public class AirlinesReducer extends Reducer<Text, IntWritable, Text, IntWritabl
             // Output each reason and its count
             while (!reasonsQueue.isEmpty()) {
                 Map.Entry<String, Integer> reasonCount = reasonsQueue.poll();
-                context.write(new Text(airline + ": " + reasonCount.getKey()), new IntWritable(reasonCount.getValue()));
+                String outputKey = airline + "\t" + reasonCount.getKey(); // Format as tab-separated values
+                context.write(new Text(outputKey), new IntWritable(reasonCount.getValue()));
             }
         }
     }
