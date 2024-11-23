@@ -6,18 +6,20 @@ from nltk.corpus import sentiwordnet as swn, stopwords
 from nltk.tokenize import word_tokenize
 from sklearn.metrics import confusion_matrix, classification_report
 
-# Pre-download required NLTK resources (only once)
+# How Ai Ying
+#2303277
+
 nltk.download('sentiwordnet')
 nltk.download('wordnet')
 nltk.download('stopwords')
 nltk.download('punkt')
 
-# Initialize Spark session
+
 spark = SparkSession.builder \
     .appName("SentimentAnalysis") \
     .getOrCreate()
 
-# Load TSV dataset
+# load TSV dataset
 df = spark.read.csv("cleaned_combined_output.tsv", sep='\t', header=True, inferSchema=True)
 
 # Filter rows with non-null values in 'airline_sentiment_gold' and 'text'
@@ -31,11 +33,10 @@ df = df.withColumn(
     .when(col("airline_sentiment_gold") == "neutral", 0)
 )
 
-# Broadcast stopwords list to all worker nodes
+
 stop_words = set(stopwords.words('english'))
 stop_words_broadcast = spark.sparkContext.broadcast(stop_words)
 
-# Define the optimized sentiment analysis function using SentiWordNet
 def analyze_sentiment_swn(text):
     from nltk.corpus import sentiwordnet as swn
     from nltk.tokenize import word_tokenize
@@ -58,7 +59,7 @@ def analyze_sentiment_swn(text):
             neg_score += sum(syn.neg_score() for syn in synsets) / len(synsets)
             word_count += 1
 
-    # Normalize scores if there are valid words with synsets
+
     if word_count > 0:
         pos_score /= word_count
         neg_score /= word_count
@@ -82,7 +83,7 @@ df = df.withColumn(
     "correct", (col("predicted_sentiment") == col("gold_sentiment")).cast(IntegerType())
 )
 
-# Calculate accuracy using Spark DataFrame operations
+
 accuracy = df.selectExpr("avg(correct) as accuracy").collect()[0]["accuracy"]
 print(f"\nAccuracy of Sentiment Analysis (using Spark DataFrame): {accuracy:.2f}")
 

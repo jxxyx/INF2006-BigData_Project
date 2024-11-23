@@ -5,7 +5,9 @@ import nltk
 from nltk.corpus import sentiwordnet as swn
 from nltk.tokenize import word_tokenize
 
-# Download required NLTK resources
+#How Ai Ying
+#2303277
+
 nltk.download('sentiwordnet')
 nltk.download('wordnet')
 nltk.download('punkt')
@@ -75,6 +77,10 @@ pandas_df["predicted_sentiment_str"] = pandas_df["predicted_sentiment"].apply(ma
 # Add a column for correctness
 pandas_df["correct"] = (pandas_df["predicted_sentiment"] == pandas_df["gold_sentiment"]).astype(int)
 
+# Calculate accuracy
+accuracy = pandas_df["correct"].mean()
+print(f"\nAccuracy of sentiment analysis: {accuracy:.2%}")
+
 # Convert back to Spark DataFrame
 final_df = spark.createDataFrame(pandas_df)
 
@@ -82,9 +88,9 @@ final_df = spark.createDataFrame(pandas_df)
 output_file = "processed_output"
 final_df.coalesce(1).select(
     col("text").alias("Text"),
-    col("airline_sentiment_gold").alias("Actual Sentiment"),
-    col("predicted_sentiment_str").alias("Predicted Sentiment"),
-    col("correct").alias("Correct (1=True, 0=False)")
+    col("airline_sentiment_gold").alias("Actual_Sentiment"),
+    col("predicted_sentiment_str").alias("Predicted_Sentiment"),
+    col("correct").alias("Correct")
 ).write.option("header", True) \
     .option("sep", "\t") \
     .mode('overwrite') \
